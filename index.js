@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const token = process.env.TOKEN;
-const port = process.env.PORT || "3000";
+const port = process.env.PORT;
 
 const app = express();
 
