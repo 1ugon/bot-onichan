@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     .then(function (info) {
       mal.findAnime(info.results[0].mal_id).then(function (infoAnime) {
         message.channel.send(
-          `**${infoAnime.title_english} - ${infoAnime.title_japanese}**`
+          `**${infoAnime.title} - ${infoAnime.title_japanese}**`
         );
         message.channel.send(infoAnime.image_url);
         message.channel.send("**Sinopse: **" + infoAnime.synopsis);
