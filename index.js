@@ -11,9 +11,7 @@ app.listen(port);
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
-  console.log(
-    `Ping recebido ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`
-  );
+  console.log(`Pingou às ${ping.getUTCHours()}:${ping.getUTCMinutes()}`);
   response.sendStatus(200);
 });
 

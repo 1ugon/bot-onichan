@@ -5,20 +5,27 @@ module.exports.run = async (client, message, args) => {
   mal
     .search("anime", args)
     .then(function (info) {
-      message.channel.send("**" + info.results[0].title + "**");
-      message.channel.send(info.results[0].url);
-      message.channel.send(
-        `🏅 Nota: **${info.results[0].score}**               ⏰ **${
-          info.results[0].episodes
-        }** Episódios (${
-          info.results[0].airing ? "ainda" : "não"
-        } está saindo mais ${
-          info.results[0].airing ? "😁" : "😭"
-        })               `
-      );
-      message.channel.send(
-        `👪 Aproximadamente **${info.results[0].members}** colocaram esse anime em sua lista`
-      );
+      mal.findAnime(info.results[0].mal_id).then(function (infoAnime) {
+        message.channel.send(
+          `**${infoAnime.title_english} - ${infoAnime.title_japanese}**`
+        );
+        message.channel.send(infoAnime.image_url);
+        message.channel.send("**Sinopse: **" + infoAnime.synopsis);
+        message.channel.send(
+          `🏅 Nota: **${infoAnime.score}** Rank: **${infoAnime.rank}**`
+        );
+        message.channel.send(
+          `⏰ **${
+            infoAnime.episodes == null ? "Zero" : infoAnime.episodes
+          }** episódios (${
+            infoAnime.airing ? "ainda" : "não"
+          } está saindo mais ${infoAnime.airing ? "😁" : "😭"})`
+        );
+        message.channel.send(
+          `👪 **${infoAnime.members}** pessoas colocaram em sua lista e **${infoAnime.favorites}** favoritaram`
+        );
+        message.channel.send(`📅 Datas: **${infoAnime.aired.string}**`);
+      });
     })
     .catch(function (err) {
       message.channel.send(`Ih papai deu o erro ${err}`);
