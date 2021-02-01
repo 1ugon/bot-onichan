@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require("dotenv").config();
 
 const token = process.env.TOKEN;
 const port = process.env.PORT;
