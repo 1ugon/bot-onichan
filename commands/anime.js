@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
       message.channel.send("**" + info.results[0].title + "**");
       message.channel.send(info.results[0].url);
       message.channel.send(
-        `🏅 Nota: ${info.results[0].score}               ⏰ **${
+        `🏅 Nota: **${info.results[0].score}**               ⏰ **${
           info.results[0].episodes
         }** Episódios (${
           info.results[0].airing ? "ainda" : "não"
