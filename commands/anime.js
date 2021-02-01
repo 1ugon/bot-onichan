@@ -10,21 +10,29 @@ module.exports.run = async (client, message, args) => {
           `**${infoAnime.title} - ${infoAnime.title_japanese}**`
         );
         message.channel.send(infoAnime.image_url);
-        message.channel.send("**Sinopse: **" + infoAnime.synopsis);
         message.channel.send(
-          `🏅 Nota: **${infoAnime.score}** Rank: **${infoAnime.rank}**`
+          "```Sinopse: " +
+            infoAnime.synopsis +
+            "\n🏅 Nota: " +
+            infoAnime.score +
+            " - Rank: " +
+            infoAnime.rank +
+            "\n" +
+            `⏰ ${
+              infoAnime.episodes == null
+                ? "O MAL cansou de contar os"
+                : infoAnime.episodes
+            } episódios (${
+              infoAnime.airing ? "ainda" : "não"
+            } está saindo mais ${infoAnime.airing ? "😁" : "😭"})` +
+            "\n👪 " +
+            infoAnime.members +
+            " pessoas colocaram em sua lista e " +
+            infoAnime.favorites +
+            " favoritaram \n📅 Datas: " +
+            infoAnime.aired.string +
+            "```"
         );
-        message.channel.send(
-          `⏰ **${
-            infoAnime.episodes == null ? "Zero" : infoAnime.episodes
-          }** episódios (${
-            infoAnime.airing ? "ainda" : "não"
-          } está saindo mais ${infoAnime.airing ? "😁" : "😭"})`
-        );
-        message.channel.send(
-          `👪 **${infoAnime.members}** pessoas colocaram em sua lista e **${infoAnime.favorites}** favoritaram`
-        );
-        message.channel.send(`📅 Datas: **${infoAnime.aired.string}**`);
       });
     })
     .catch(function (err) {
