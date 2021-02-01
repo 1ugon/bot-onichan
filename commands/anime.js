@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   var anime = "Anime não encontrado";
 
   async function findAnime() {
-    mal
+    await mal
       .findAnime("11597", "episodes", 1)
       .then((info) => (anime = info))
       .catch((err) => (anime = err));
