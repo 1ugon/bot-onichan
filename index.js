@@ -5,6 +5,8 @@ const port = process.env.PORT;
 
 const app = express();
 
+app.listen(port);
+
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -13,8 +15,6 @@ app.get("/", (request, response) => {
   );
   response.sendStatus(200);
 });
-
-app.listen(port);
 
 const Discord = require("discord.js");
 
