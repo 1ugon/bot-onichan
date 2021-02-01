@@ -1,4 +1,4 @@
 module.exports.run = async (client, message, args) => {
-  const testeMessage = args.join(" ");
+  const testeMessage = "onii-chan? 🥺";
   message.channel.send(testeMessage);
 };
