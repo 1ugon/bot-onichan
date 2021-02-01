@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
             infoAnime.synopsis +
             "\n🏅 Nota: " +
             infoAnime.score +
-            " - Rank: " +
+            " 🏆 Rank: " +
             infoAnime.rank +
             "\n" +
             `⏰ ${
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
             infoAnime.members +
             " pessoas colocaram em sua lista e " +
             infoAnime.favorites +
-            " favoritaram \n📅 Datas: " +
+            " favoritaram \n📅 Data: " +
             infoAnime.aired.string +
             "```"
         );
