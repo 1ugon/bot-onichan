@@ -7,5 +7,5 @@ module.exports.run = async (client, message, args) => {
     .then((info) => console.log(info))
     .catch((err) => console.log(err));
 
-  message.chanel.send(anime);
+  message.channel.send(anime);
 };
