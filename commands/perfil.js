@@ -5,10 +5,9 @@ module.exports.run = async (client, message, args) => {
   mal
     .findUser(args, "profile")
     .then(function (info) {
+      message.channel.send(`Perfil de **${info.username}**`);
       message.channel.send(
-        "Perfil de **" +
-          info.username +
-          "** ```🕒 " +
+        "```🕒 " +
           info.anime_stats.days_watched +
           " dias assistidos \n🔘 está assistindo " +
           info.anime_stats.watching +
