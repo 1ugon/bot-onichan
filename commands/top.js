@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
   mal
     .findTop(args)
     .then(function (info) {
-      for (var i = 0; i < 30; i++) {
+      for (var i = 0; i < 15; i++) {
         let rankindice = `#${info.top[i].rank} - ${info.top[i].title} -> 🏅 ${info.top[i].score}\n`;
         rank = rank + rankindice;
       }
