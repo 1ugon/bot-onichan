@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
         rank = rank + rankindice;
       }
       message.channel.send("```" + rank + "```");
+      rank = "";
     })
     .catch(function (err) {
       message.channel.send(`Ih papai deu o erro ${err}`);
