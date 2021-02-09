@@ -7,6 +7,6 @@ module.exports.run = async (client, message, args) => {
 
 
 
-    Bot desenvolvido por twitch.tv/goka0`;
+    Bot desenvolvido por Pedro Lugon (http://lugon.dev)`;
   message.channel.send(helpMessage);
 };
